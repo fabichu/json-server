@@ -1,11 +1,11 @@
 import './App.css';
+import Product from './components/Product';
 
 function App() {
   return (
     <div className="App">
-      <div className='Product'>
-        <h3>Product</h3>
-        <p className='price'>100 €</p>
+      <div className='productContainer'>
+        <Product id='1' title='The Great Gatsby' price={'10'} currency='€' />
       </div>
     </div>
   );
