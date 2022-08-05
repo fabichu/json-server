@@ -1,14 +1,19 @@
 import './App.css';
 import Product from './components/Product';
-import catalogue from './api/products.json';
 import { useState, useEffect } from 'react';
 
 function App() {
 
   const [products, setProducts] = useState([]);
 
+  const getProducts = async () => {
+    const response = await fetch('http://localhost:8001/products');
+    const data = await response.json();
+    setProducts(data);
+  }
+
   useEffect(() => {
-    setProducts(catalogue.products);
+    getProducts();
   }, []);
 
   return (
